@@ -11,6 +11,8 @@ class PostAdmin(admin.ModelAdmin):
    ordering=('updated_time',)
    list_filter = ('status',)
    search_fields=['content','title',]
+   
+   # add rate for view
    def rate_views(self,obj):
         if obj.counted_views > 50:
             return "Gold"
