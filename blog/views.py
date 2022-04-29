@@ -18,4 +18,4 @@ def blog_single(request):
 def test(request):
     posts=Post.objects.all()
     content={"posts": posts}
-    return render(request,'blog/test.html',context=content)    
+    return render(request,'blog/test.html',context=content) 
