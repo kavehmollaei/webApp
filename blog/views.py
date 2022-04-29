@@ -3,7 +3,7 @@ import imp
 from multiprocessing.spawn import import_main_path
 from django.shortcuts import render
 from datetime import date
-
+from blog.models import Post
 
 # Create your views here.
 def blog_view(request):
@@ -16,4 +16,6 @@ def blog_single(request):
     return render(request,'blog/blog-item.html')
 
 def test(request):
-    return render(request,'blog/test.html')    
+    posts=Post.objects.all()
+    content={"posts": posts}
+    return render(request,'blog/test.html',context=content)    

@@ -31,7 +31,7 @@ class Post(models.Model):
     
 
 
-
+# craete Contact model
 class Contact(models.Model):
     name = models.CharField(max_length=255)
     email = models.EmailField()
