@@ -14,3 +14,6 @@ def blog_view(request):
 
 def blog_single(request):
     return render(request,'blog/blog-item.html')
+
+def test(request):
+    return render(request,'blog/test.html')    

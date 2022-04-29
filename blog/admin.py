@@ -1,5 +1,6 @@
 from django.contrib import admin
-from blog.models import Post
+from blog.models import Post,Contact
+
 
 
 
@@ -8,7 +9,7 @@ class PostAdmin(admin.ModelAdmin):
    empty_value_display='-empty-'
     # fields=('title',)
    list_display =('title','published_date','updated_time','counted_views','status','rate_views')
-   ordering=('updated_time',)
+#    ordering=('updated_time',)
    list_filter = ('status',)
    search_fields=['content','title',]
    
@@ -19,9 +20,15 @@ class PostAdmin(admin.ModelAdmin):
         else:
             return "silver"
 
+class ContactAdmin(admin.ModelAdmin):
+    date_hierarchy='created_date'
+    list_display =('name','email','subject','message','created_date','updated_date',)
+    list_filter = ('email',)
+    search_fields =('name','message',)
+
 
 admin.site.register(Post,PostAdmin)
-
+admin.site.register(Contact,ContactAdmin)
 
 
 
