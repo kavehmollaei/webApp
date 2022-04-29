@@ -16,7 +16,7 @@ def blog_single(request):
 
     return render(request,'blog/blog-item.html')
 
-def test(request):
-    posts=Post.objects.all()
-    content={"posts": posts}
+def test(request,pid):
+    
+    content={"pid":pid}
     return render(request,'blog/test.html',context=content) 
