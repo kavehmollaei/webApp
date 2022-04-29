@@ -27,28 +27,31 @@
                 
                 <!-- Start Blog Body Section -->
                 <div class="col-md-8 blog-body">
-                    
+                    {% for post in posts %}
                     <!-- Start Blog post -->
                     <div class="blog-post">
+                        
+
                         <div class="post-img">
                             <img src="{% static 'images/blog/blog-01.jpg' %}" class="img-responsive" alt="Blog image">
                         </div>
-                        <h1 class="post-title"><a href="#">Nulla facilisi integer lacinia sollicitudin massa</a></h1>
+                        <h1 class="post-title"><a href="#">{{post.title}}</a></h1>
                         
                         <ul class="post-meta">
-							<li><i class="fa fa-clock-o"></i>{{date_publish}}</li>
+							<li><i class="fa fa-clock-o"></i>{{post.published_date}}</li>
 							<li><i class="fa fa-user"></i><a href="#">{{author}}</a></li>
 							<li><i class="fa fa-file"></i><a href="#">Blog</a></li>
-                            <li><i class="fa fa-tags"></i><a href="#">Women Rights</a></li>
+                            <li><i class="fa fa-tags"></i><a href="#">{{post.counted_views}}</a></li>
 							<li><i class="fa fa-comments"></i><a href="#">4 Comments</a></li>
 						</ul>
                         
-                        <p class="post-content">Nulla facilisi. Integer lacinia sollicitudin massa. Cras metus. Sed aliquet risus a tortor. Integer id quam. Morbi mi. Quisque nisl felis, venenatis tristique, dignissim in, ultrices sit amet, augue. Proin sodales libero eget ante. Nulla quam. Aenean laoreet. Vestibulum nisi lectus, commodo ac, facilisis ac, ultricies eu, pede. Ut orci risus, accumsan porttitor, cursus quis, aliquet eget, justo.</p>
+                        <p class="post-content">{{post.content}}</p>
                         <a href="#" class="btn btn-primary readmore">Read more...<i class="fa fa-angle-right"></i></a>
                     </div>
+                    {% endfor%}
                     <!-- End Blog Post -->
-                    
-                    <!-- Start Blog post -->
+                      <!--
+                    Start Blog post
                     <div class="blog-post">
                         <div class="post-img">
                             <img src="{% static 'images/blog/blog-02.jpg' %}" class="img-responsive" alt="Blog image">
@@ -66,7 +69,7 @@
                         <p class="post-content">Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi lacinia molestie dui. Praesent blandit dolor. Sed non quam. In vel mi sit amet augue congue elementum. Morbi in ipsum sit amet pede facilisis laoreet. Donec lacus nunc, viverra nec, blandit vel, egestas et, augue. Vestibulum tincidunt malesuada tellus. Ut ultrices ultrices enim. Curabitur sit amet mauris. Morbi in dui quis est pulvinar ullamcorper.</p>
                         <a href="#" class="btn btn-primary readmore">Read more...<i class="fa fa-angle-right"></i></a>
                     </div>
-                    <!-- End Blog post -->
+                    End Blog post -->
                     
                     
                     <!-- Start Pagination -->

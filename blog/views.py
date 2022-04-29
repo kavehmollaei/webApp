@@ -7,12 +7,13 @@ from blog.models import Post
 
 # Create your views here.
 def blog_view(request):
-    content={'title':'why mathemathic??','author':'noora habibi','date_publish':date.today()}
-    
-
+    # content={'title':'why mathemathic??','author':'noora habibi','date_publish':date.today()}
+    posts=Post.objects.filter(status=True)
+    content={"posts": posts}
     return render(request,'blog/blog.html',context=content)
 
 def blog_single(request):
+
     return render(request,'blog/blog-item.html')
 
 def test(request):
