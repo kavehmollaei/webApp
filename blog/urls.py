@@ -12,6 +12,6 @@ app_name='blog'
 urlpatterns = [
 path('',blog_view,name='index'),
 path('<int:pid>',blog_single,name='blog_single'),
-path('<str:name>/<str:family_name>',test,name='test'),
-path('details/',blog_details,name='blog_details')
+
+# path('details/',blog_details,name='blog_details')
 ]

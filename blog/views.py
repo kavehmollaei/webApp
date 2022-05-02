@@ -5,7 +5,7 @@ from multiprocessing.spawn import import_main_path
 import re
 from django.shortcuts import get_object_or_404, render
 from datetime import date
-from blog.models import Post
+from blog.models import Post,UserProfile
 
 # Create your views here.
 def blog_view(request):
@@ -16,7 +16,8 @@ def blog_view(request):
 
 def blog_single(request,pid):
     post=get_object_or_404(Post,id=pid,status=True)
-    content={'post':post}
+    userProfile=get_object_or_404(UserProfile)
+    content={'post':post,'userProfile':userProfile}
     return render(request,'blog/blog-item.html',context=content)
 
 def test(request,name,family_name):

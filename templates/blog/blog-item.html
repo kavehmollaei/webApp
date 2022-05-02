@@ -36,16 +36,16 @@
                         
                         <div class="post-meta">
                             <ul class=" pull-left">
-                                <li><i class="fa fa-clock-o"></i>{{po}}</li>
-                                <li><i class="fa fa-user"></i><a href="#">Super User</a></li>
-                                <li><i class="fa fa-file"></i><a href="#">Blog</a></li>
-                                <li><i class="fa fa-tags"></i><a href="#">Women Rights</a></li>
+                                <li><i class="fa fa-clock-o"></i>{{post.published_date}}</li>
+                                <li><i class="fa fa-user"></i><a href="#">{{post.author.get_full_name}}</a></li>
+                             
+                              
                                 <li><i class="fa fa-comments"></i><a href="#">4 Comments</a></li>
                             </ul>
                             <ul class="pull-right">
-                                <li>font-size<i class="fa fa-minus-circle"></i><i class="fa fa-plus-circle"></i></li>
-                                <li><a href="#">Print</a></li>
-                                <li><a href="#">Email</a></li>
+                                <!-- <li>font-size<i class="fa fa-minus-circle"></i><i class="fa fa-plus-circle"></i></li> -->
+                                <!-- <li><a href="#">Print</a></li> -->
+                                <li><a href="#">{{post.author.email}}</a></li>
                             </ul>
                         </div>
                         
@@ -72,7 +72,7 @@
                     
                     <!-- Start Blog Author Section -->
                     <div class="blog-author">
-                        <h3>About The Author</h3>
+                        <h3>About Me</h3>
                         <div class="media">
                             <div class="media-left">
                                 <a href="#">
@@ -80,7 +80,7 @@
                                 </a>
                             </div>
                             <div class="media-body">
-                                <h4 class="media-heading"><a href="#">Super User</a></h4>
+                                <h4 class="media-heading"><a href="#">{{userProfile.about}}</a></h4>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
                             </div>
                         </div>

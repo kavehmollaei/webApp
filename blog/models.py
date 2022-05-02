@@ -1,11 +1,8 @@
-from email.mime import image
-import imp
-from pyexpat import model
-from ssl import create_default_context
-from statistics import mode
-from tabnanny import verbose
+
 from django.db import models
 from django.contrib.auth.models import User
+
+
 
 # Create your models here.
 class Post(models.Model):
@@ -46,3 +43,9 @@ class Contact(models.Model):
         ordering = ['created_date']
     def __str__(self):
         return self.name
+
+
+class UserProfile(models.Model):
+    address = models.CharField(max_length=255,blank=True,null=True)
+    user = models.ForeignKey(User,on_delete=models.CASCADE,null=True)
+    about = models.TextField(max_length=500,blank=True)     
