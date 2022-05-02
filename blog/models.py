@@ -1,9 +1,11 @@
 from email.mime import image
+import imp
+from pyexpat import model
 from ssl import create_default_context
 from statistics import mode
 from tabnanny import verbose
 from django.db import models
-
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Post(models.Model):
@@ -12,7 +14,7 @@ class Post(models.Model):
     #image
     #tags
     #category
-    #author
+    author = models.ForeignKey(User,on_delete=models.SET_NULL,null=True)
     counted_views = models.IntegerField(default=0) #defaulr=0
     status = models.BooleanField(default=False)
     published_date = models.DateTimeField(null=True)

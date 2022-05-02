@@ -2,7 +2,7 @@ from datetime import date
 import imp
 from multiprocessing.spawn import import_main_path
 import re
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from datetime import date
 from blog.models import Post
 
@@ -13,9 +13,10 @@ def blog_view(request):
     content={"posts": posts}
     return render(request,'blog/blog.html',context=content)
 
-def blog_single(request):
-
-    return render(request,'blog/blog-item.html')
+def blog_single(request,pid):
+    post=get_object_or_404(Post,id=pid,status=True)
+    content={'post':post}
+    return render(request,'blog/blog-item.html',context=content)
 
 def test(request,name,family_name):
     
