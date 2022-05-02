@@ -35,7 +35,11 @@
                         <div class="post-img">
                             <img src="{% static 'images/blog/blog-01.jpg' %}" class="img-responsive" alt="Blog image">
                         </div>
+<<<<<<< HEAD
                         <h1 class="post-title"><a href="{% url 'blog:blog_single' pid=post.id %}">{{post.title}}</a></h1>
+=======
+                        <h1 class="post-title"><a href="/blog/{{post.id}}">{{post.title}}</a></h1>
+>>>>>>> a239e650c1225beb7143049f67af3301f5f0daef
                         
                         <ul class="post-meta">
 							<li><i class="fa fa-clock-o"></i>{{post.published_date}}</li>

@@ -1,4 +1,5 @@
 from datetime import date
+from gc import get_objects
 import imp
 from multiprocessing.spawn import import_main_path
 import re
@@ -23,6 +24,3 @@ def test(request,name,family_name):
     content={"firstname":name,"lastname":family_name}
     return render(request,'blog/test.html',context=content) 
 
-
-def blog_details(request):
-    return render(request,'blog/blog-item.html')

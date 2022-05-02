@@ -2,7 +2,7 @@
 from django.urls import path
 
 from website.views import index
-from blog.views import blog_single,blog_view,test,blog_details
+from blog.views import blog_single,blog_view
 
 
 
