@@ -1,11 +1,12 @@
 from datetime import date
+from email.mime import audio
 from gc import get_objects
 import imp
 from multiprocessing.spawn import import_main_path
 import re
 from django.shortcuts import get_object_or_404, render
 from datetime import date
-from blog.models import Post,UserProfile
+from blog.models import Post,UserProfile,User
 
 # Create your views here.
 def blog_view(request):
@@ -15,9 +16,11 @@ def blog_view(request):
     return render(request,'blog/blog.html',context=content)
 
 def blog_single(request,pid):
+    
     post=get_object_or_404(Post,id=pid,status=True)
-    userProfile=get_object_or_404(UserProfile)
-    content={'post':post,'userProfile':userProfile}
+    
+    userprofile=UserProfile.objects.all()
+    content={'post':post,'userprofile':userprofile}
     return render(request,'blog/blog-item.html',context=content)
 
 def test(request,name,family_name):

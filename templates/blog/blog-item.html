@@ -80,8 +80,12 @@
                                 </a>
                             </div>
                             <div class="media-body">
-                                <h4 class="media-heading"><a href="#">{{userProfile.about}}</a></h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                <h4 class="media-heading"><a href="#">{{post.author.get_full_name}}</a></h4>
+                                {% for item in userprofile %}
+                                 {% if post.author.username == item.user.username %}                             
+                                <p> {{item.about}}</p>
+                                {% endif %}
+                               {% endfor %}
                             </div>
                         </div>
                     </div>
@@ -265,7 +269,8 @@
                         
                         <div class="section-heading-2">
                             <h3 class="section-title">
-                                <span>Blog Categories</span>
+                                <span>Blog Posts</span>
+                                {{posts}}
                             </h3>
                         </div>
                         

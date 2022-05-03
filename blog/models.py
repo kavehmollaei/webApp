@@ -34,7 +34,8 @@ class Post(models.Model):
         verbose_name_plural = 'postBlog'  
 
 
-
+    def count_posts_of(user):
+        return Post.objects.filter(author=user).count()
 
     def __str__(self) -> str:
         return f"{self.id}-{self.title}"
