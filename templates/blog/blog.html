@@ -33,7 +33,7 @@
                         
 
                         <div class="post-img">
-                            <img src="{% static 'images/blog/blog-01.jpg' %}" class="img-responsive" alt="Blog image">
+                            <img src="{{post.image.url}}" class="img-responsive" alt="Blog image">
                         </div>
                         <h1 class="post-title"><a href="{% url 'blog:blog_single' pid=post.id %}">{{post.title}}</a></h1>
                         
