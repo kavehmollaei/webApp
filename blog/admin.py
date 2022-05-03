@@ -1,7 +1,7 @@
 import imp
 from statistics import mode
 from django.contrib import admin
-from blog.models import Post,Contact,UserProfile
+from blog.models import Post,Contact,UserProfile,Category
 # from django.contrib.auth.admin import UserAdmin
 # from django.contrib.auth.forms import UserCreateForm,UserChangeForm
 
@@ -34,6 +34,11 @@ class ContactAdmin(admin.ModelAdmin):
 
 class UserProfileAdmin(admin.ModelAdmin):
     list_display =('address','about','user',)
+
+
+
+
+
 # class CustomeUserAdmin(UserAdmin):
     # add_form = UserCreateForm
     # form = UserChangeForm
@@ -48,6 +53,6 @@ class UserProfileAdmin(admin.ModelAdmin):
 admin.site.register(Post,PostAdmin)
 admin.site.register(Contact,ContactAdmin)
 admin.site.register(UserProfile,UserProfileAdmin)
-
+admin.site.register(Category)
 
 #  Register your models here.

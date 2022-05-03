@@ -36,7 +36,7 @@
                         
                         <div class="post-meta">
                             <ul class=" pull-left">
-                                <li><i class="fa fa-clock-o"></i>{{post.published_date}}</li>
+                                <li><i class="fa fa-clock-o"></i>{{post.published_date|date:"D d m Y"}}</li>
                                 <li><i class="fa fa-user"></i><a href="#">{{post.author.get_full_name}}</a></li>
                              
                               
@@ -197,57 +197,8 @@
                     
                     
                     <!-- Start Flickr Widget -->
-                    <div class="widget flickr-widget">
-                        
-                        <div class="section-heading-2">
-                            <h3 class="section-title">
-                                <span>{{post.updated_time}}</span>
-                            </h3>
-                        </div>
-                        
-                        <ul class="flickr-list">
-                            <li>
-                                <a href="{% static 'images/flickr/8.jpg' %}" data-lightbox="picture-1">
-                                    <img src="{% static 'images/flickr/8.jpg' %}" alt="" class="img-responsive">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{% static 'images/flickr/7.jpg' %}" data-lightbox="picture-2">
-                                    <img src="{% static 'images/flickr/7.jpg' %}" alt="" class="img-responsive">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{% static 'images/flickr/6.jpg' %}" data-lightbox="picture-3">
-                                    <img src="{% static 'images/flickr/6.jpg' %}" alt="" class="img-responsive">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{% static 'images/flickr/5.jpg' %}" data-lightbox="picture-4">
-                                    <img src="{% static 'images/flickr/5.jpg' %}" alt="" class="img-responsive">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{% static 'images/flickr/4.jpg' %}" data-lightbox="picture-5">
-                                    <img src="{% static 'images/flickr/4.jpg' %}" alt="" class="img-responsive">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{% static 'images/flickr/3.jpg' %}" data-lightbox="picture-6">
-                                    <img src="{% static 'images/flickr/3.jpg' %}" alt="" class="img-responsive">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{% static 'images/flickr/2.jpg' %}" data-lightbox="picture-7">
-                                    <img src="{% static 'images/flickr/2.jpg' %}" alt="" class="img-responsive">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{% static 'images/flickr/1.jpg' %}" data-lightbox="picture-8">
-                                    <img src="{% static 'images/flickr/1.jpg' %}" alt="" class="img-responsive">
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                    {% include 'blog/blog-tabligh.html' %}
+                  
                     <!-- End Flickr Widget -->
                     
                     
