@@ -13,6 +13,8 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+  
+        
 
 
 # Create your models here.
@@ -41,7 +43,9 @@ class Post(models.Model):
         return f"{self.id}-{self.title}"
 
     def snippets(self):
-        return self.content[:100] + '...'   
+        return self.content[:100] + '...'  
+   
+   
     
 
 
