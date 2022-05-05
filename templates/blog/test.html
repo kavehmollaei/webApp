@@ -1,3 +1,5 @@
+{% load blog_tags %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,8 +12,22 @@
 
 
 <body>
+    <div>
+        <p>
+          
+{% posts as total  %}
+            {% for post in total %}
+            <p>{{ post.content|snippet:10 }}</p>
 
-    <p> {{firstname}}</p>
-    <p> {{lastname}}</p>
+            {% endfor %}
+        </p>
+
+
+    </div>
+
+    <div>
+
+        {% popularposts %}
+    </div>
 </body>
 </html>

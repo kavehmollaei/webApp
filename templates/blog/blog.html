@@ -1,4 +1,7 @@
-{% extends 'website/base.html'%} {% load static %} {% block content %}
+{% extends 'website/base.html'%} 
+{% load static %}
+{% load blog_tags %}
+{% block content %}
 
 <!-- Start Header Section -->
 <div class="page-header">
@@ -120,9 +123,9 @@
       <!-- End Flickr Widget -->
 
       <!-- Start Recent Post Widget -->
-      {% include 'blog/recentpost.html' %}
+      {% latestposts %}
       <!-- End Recent Post Widget -->
-
+    
       <!-- Start Blog categories widget -->
       <div class="widget widget-categories">
         <div class="section-heading-2">
@@ -157,7 +160,7 @@
         </div>
 
         <div class="tagcloud">
-          <a href="#">Charity</a>
+          <a href="#"></a>
           <a href="#">Children</a>
           <a href="#">Education</a>
           <a href="#">Elderly</a>

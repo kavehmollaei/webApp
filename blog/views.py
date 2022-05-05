@@ -32,8 +32,8 @@ def blog_single(request,pid):
     content={'post':post,'userprofile':userprofile,'category':category}
     return render(request,'blog/blog-item.html',context=content)
 
-def test(request,name,family_name):
+def test(request):
     
-    content={"firstname":name,"lastname":family_name}
-    return render(request,'blog/test.html',context=content) 
+    
+    return render(request,'blog/test.html') 
 
